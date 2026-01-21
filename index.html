@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item ID Extractor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Item ID Extractor</h1>
+
+    <div class="form-group">
+        <div class="input-header">
+            <label for="jsonInput">JSON List Input:</label>
+            <div class="input-controls">
+                <button class="control-btn" id="pasteInputBtn" onclick="pasteInput()" title="Paste JSON">Paste</button>
+                <button class="control-btn" id="copyInputBtn" onclick="copyInput()" title="Copy JSON">Copy</button>
+                <button class="control-btn" id="clearInputBtn" onclick="clearInput()" title="Clear JSON">Clear</button>
+            </div>
+        </div>
+        <textarea id="jsonInput" placeholder='Paste your JSON here, e.g.:
+{
+  "items": [
+    {
+      "id": "abc123",
+      "itemKey": "MONKEY",
+      ...
+    }
+  ]
+}'></textarea>
+    </div>
+
+        <div class="form-group">
+            <label for="rewardType">Select Reward Type:</label>
+            <select id="rewardType">
+                <option value="">-- Choose a reward type --</option>
+                <option value="UPOINT_200K">UPOINT_200K (MONKEY, MOUSE, DRAGON)</option>
+                <option value="UPOINT_100K_1">UPOINT_100K (MOUSE, OX)</option>
+                <option value="UPOINT_100K_2">UPOINT_100K (SNAKE, MONKEY)</option>
+                <option value="UPOINT_100K_3">UPOINT_100K (DRAGON, ROOSTER)</option>
+                <option value="UPOINT_68686">UPOINT_68686 (3 same animals)</option>
+            </select>
+
+            <div id="animalSelector" class="animal-selector">
+                <label for="animalType">Select Animal Type:</label>
+                <select id="animalType">
+                    <option value="">-- Choose an animal --</option>
+                    <option value="MOUSE">MOUSE</option>
+                    <option value="OX">OX</option>
+                    <option value="TIGER">TIGER</option>
+                    <option value="CAT">CAT</option>
+                    <option value="DRAGON">DRAGON</option>
+                    <option value="SNAKE">SNAKE</option>
+                    <option value="HORSE">HORSE</option>
+                    <option value="GOAT">GOAT</option>
+                    <option value="MONKEY">MONKEY</option>
+                    <option value="ROOSTER">ROOSTER</option>
+                    <option value="DOG">DOG</option>
+                    <option value="PIG">PIG</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="extractBtn" onclick="extractIds()">Extract IDs</button>
+
+        <div class="error" id="errorMsg"></div>
+
+        <div class="output" id="output">
+            <div class="output-header">
+                <span class="output-label">Output JSON:</span>
+                <button class="copy-btn" id="copyBtn" onclick="copyOutput()">Copy</button>
+            </div>
+            <div class="output-content" id="outputContent"></div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
