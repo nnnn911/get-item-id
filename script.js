@@ -197,7 +197,7 @@ function pasteInput() {
             jsonInput.value = text;
             const originalText = pasteInputBtn.textContent;
             pasteInputBtn.textContent = '✅ Pasted!';
-            jsonInput.focus();
+            jsonInput.blur(); // Prevent zoom on iOS
             setTimeout(() => {
                 pasteInputBtn.textContent = originalText;
             }, 2000);
