@@ -212,7 +212,7 @@ function pasteInput() {
 function clearInput() {
     const jsonInput = document.getElementById('jsonInput');
     jsonInput.value = '';
-    jsonInput.focus();
+    jsonInput.blur(); // Prevent zoom on iOS
 }
 
 // Allow Enter key in textarea
